@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import { UserRouter } from "./modules/user/user.router";
 import { PostRouter } from "./modules/post/post.router";
+import { AuthRouter } from "./modules/auth/auth.routes";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json()); // Parse incoming JSON requests
 
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/post", PostRouter);
+app.use("/api/v1/auth", AuthRouter);
 
 app.use(
   cors({
